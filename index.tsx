@@ -113,6 +113,7 @@ export type IProps = {
   touchIDSentence?: string
   touchIDTitle?: string
   validationRegex?: RegExp
+  passcodeFallback?: boolean
 }
 
 export type IState = {
@@ -252,6 +253,7 @@ class PINCode extends React.PureComponent<IProps, IState> {
         {status === PinStatus.enter &&
         <PinCodeEnter
           animationErrorDuration={this.props.animationErrorDuration}
+          passcodeFallback={this.props.passcodeFallback}
           buttonDeleteComponent={this.props.buttonDeleteComponent}
           buttonDeleteText={this.props.buttonDeleteText}
           buttonNumberComponent={this.props.buttonNumberComponent}

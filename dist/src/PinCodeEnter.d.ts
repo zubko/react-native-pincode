@@ -78,6 +78,7 @@ export declare type IProps = {
     touchIDDisabled: boolean;
     touchIDSentence: string;
     touchIDTitle?: string;
+    passcodeFallback?: string;
 };
 export declare type IState = {
     pinCodeStatus: PinResultStatus;
@@ -85,6 +86,9 @@ export declare type IState = {
 };
 declare class PinCodeEnter extends React.PureComponent<IProps, IState> {
     keyChainResult: string | undefined;
+    static defaultProps: {
+        passcodeFallback: boolean;
+    };
     constructor(props: IProps);
     componentWillMount(): Promise<void>;
     componentDidMount(): void;
