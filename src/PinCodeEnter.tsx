@@ -18,7 +18,7 @@ import TouchID from 'react-native-touch-id'
  * Pin Code Enter PIN Page
  */
 
-export type IProps = {
+export interface IProps {
   animationErrorDuration?: number
   buttonDeleteComponent: any
   buttonDeleteText?: string
@@ -93,7 +93,7 @@ export type IProps = {
   passcodeFallback?: boolean
 }
 
-export type IState = {
+export interface IState {
   pinCodeStatus: PinResultStatus
   locked: boolean
 }
@@ -103,6 +103,7 @@ class PinCodeEnter extends React.PureComponent<IProps, IState> {
 
   static defaultProps = {
     passcodeFallback: true,
+    styleContainer: null
   }
 
   constructor(props: IProps) {
@@ -235,11 +236,10 @@ class PinCodeEnter extends React.PureComponent<IProps, IState> {
       this.props.storedPin || (this.keyChainResult && this.keyChainResult)
     return (
       <View
-        style={
+        style={[
+          styles.container,
           this.props.styleContainer
-            ? this.props.styleContainer
-            : styles.container
-        }>
+        ]}>
         <PinCode
           animationErrorDuration={this.props.animationErrorDuration}
           buttonDeleteComponent={this.props.buttonDeleteComponent || null}
@@ -315,12 +315,12 @@ class PinCodeEnter extends React.PureComponent<IProps, IState> {
   }
 }
 
-export default PinCodeEnter
-
-let styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
   }
 })
+
+export default PinCodeEnter

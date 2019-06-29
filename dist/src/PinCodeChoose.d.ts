@@ -1,16 +1,13 @@
-/// <reference types="react" />
 import { PinStatus } from './PinCode';
 import * as React from 'react';
 import { StyleProp, TextStyle, ViewStyle } from 'react-native';
 /**
  * Pin Code Choose PIN Page
  */
-export declare type IProps = {
-    animationErrorDuration?: number;
+export interface IProps {
     buttonDeleteComponent: any;
     buttonDeleteText?: string;
     buttonNumberComponent: any;
-    bottomComponent?: any;
     colorCircleButtons?: string;
     colorPassword?: string;
     colorPasswordEmpty?: string;
@@ -19,7 +16,6 @@ export declare type IProps = {
     emptyColumnComponent: any;
     finishProcess?: (pinCode: string) => void;
     getCurrentLength?: (length: number) => void;
-    headerComponent?: any;
     iconButtonDeleteDisabled?: boolean;
     numbersButtonOverlayColor?: string;
     passwordComponent: any;
@@ -39,7 +35,7 @@ export declare type IProps = {
     styleColorTitleError?: string;
     styleColumnButtons?: StyleProp<ViewStyle>;
     styleColumnDeleteButton?: StyleProp<ViewStyle>;
-    styleContainer?: StyleProp<ViewStyle>;
+    styleContainer: StyleProp<ViewStyle>;
     styleContainerPinCode?: StyleProp<ViewStyle>;
     styleDeleteButtonColorHideUnderlay?: string;
     styleDeleteButtonColorShowUnderlay?: string;
@@ -66,14 +62,15 @@ export declare type IProps = {
     titleConfirmFailed?: string;
     titleValidationFailed?: string;
     validationRegex?: RegExp;
-};
+}
 export declare type IState = {
     status: PinStatus;
     pinCode: string;
 };
 declare class PinCodeChoose extends React.PureComponent<IProps, IState> {
+    static defaultProps: Partial<IProps>;
     constructor(props: IProps);
-    endProcessCreation: (pinCode: string, isErrorValidation?: boolean | undefined) => void;
+    endProcessCreation: (pinCode: string, isErrorValidation?: boolean) => void;
     endProcessConfirm: (pinCode: string) => Promise<void>;
     cancelConfirm: () => void;
     render(): JSX.Element;
