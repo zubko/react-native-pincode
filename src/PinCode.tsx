@@ -182,7 +182,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
   }
 
   failedAttempt = async () => {
-    await delay(300);
+    // await delay(300);
     this.setState({
       showError: true,
       attemptFailed: true,
@@ -190,12 +190,13 @@ class PinCode extends React.PureComponent<IProps, IState> {
     });
     this.doShake();
     await delay(this.props.delayBetweenAttempts || 3000);
+
     this.newAttempt();
   };
 
   newAttempt = async () => {
     this.setState({ changeScreen: true });
-    await delay(200);
+    // await delay(200);
     this.setState({
       changeScreen: false,
       showError: false,
@@ -230,7 +231,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
           break;
         case PinStatus.enter:
           this.props.endProcess(currentPassword);
-          await delay(300);
+          // await delay(300);
           break;
         default:
           break;
@@ -332,33 +333,33 @@ class PinCode extends React.PureComponent<IProps, IState> {
     const duration = 70;
     if (this.props.vibrationEnabled) Vibration.vibrate(500, false);
     const length = Dimensions.get("window").width / 3;
-    await delay(duration);
+    // await delay(duration);
     this.setState({ moveData: { x: length, y: 0 } });
-    await delay(duration);
+    // await delay(duration);
     this.setState({ moveData: { x: -length, y: 0 } });
-    await delay(duration);
+    // await delay(duration);
     this.setState({ moveData: { x: length / 2, y: 0 } });
-    await delay(duration);
+    // await delay(duration);
     this.setState({ moveData: { x: -length / 2, y: 0 } });
-    await delay(duration);
+    // await delay(duration);
     this.setState({ moveData: { x: length / 4, y: 0 } });
-    await delay(duration);
+    // await delay(duration);
     this.setState({ moveData: { x: -length / 4, y: 0 } });
-    await delay(duration);
+    // await delay(duration);
     this.setState({ moveData: { x: 0, y: 0 } });
     if (this.props.getCurrentLength) this.props.getCurrentLength(0);
   }
 
   async showError(isErrorValidation = false) {
     this.setState({ changeScreen: true });
-    await delay(300);
+    // await delay(300);
     this.setState({ showError: true, changeScreen: false });
     this.doShake();
     await delay(this.props.animationErrorDuration || 3000);
     this.setState({ changeScreen: true });
-    await delay(200);
+    // await delay(200);
     this.setState({ showError: false, password: "" });
-    await delay(200);
+    // await delay(200);
     this.props.endProcess(this.state.password, isErrorValidation);
     if (isErrorValidation) this.setState({ changeScreen: false });
   }
