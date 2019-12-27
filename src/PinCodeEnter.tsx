@@ -186,7 +186,7 @@ class PinCodeEnter extends React.PureComponent<IProps, IState> {
           this.props.changeInternalStatus(PinResultStatus.failure)
         }
         if (this.props.onFail) {
-          await delay(1500)
+          // await delay(1500)
           this.props.onFail(pinAttempts)
         }
       }
