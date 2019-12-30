@@ -11,6 +11,7 @@ import { View, StyleSheet, StyleProp, ViewStyle, TextStyle } from "react-native"
 export type IProps = {
   animationErrorDuration?: number
   alphabetCharsVisible?: boolean
+  animationErrorDuration?: number
   bottomLeftComponent?: any
   buttonComponentLockedPage?: any
   buttonDeleteComponent?: any
@@ -200,6 +201,7 @@ class PINCode extends React.PureComponent<IProps, IState> {
             bottomComponent={this.props.bottomComponent}
             headerComponent={this.props.headerComponent}
             alphabetCharsVisible={this.props.alphabetCharsVisible}
+            animationErrorDuration={this.props.animationErrorDuration}
             buttonDeleteComponent={this.props.buttonDeleteComponent}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent}
@@ -268,6 +270,7 @@ class PINCode extends React.PureComponent<IProps, IState> {
             headerComponent={this.props.headerComponent}
             alphabetCharsVisible={this.props.alphabetCharsVisible}
             passcodeFallback={this.props.passcodeFallback}
+            animationErrorDuration={this.props.animationErrorDuration}
             buttonDeleteComponent={this.props.buttonDeleteComponent}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent}
