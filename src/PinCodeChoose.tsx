@@ -9,6 +9,7 @@ import * as Keychain from 'react-native-keychain'
  */
 
 export type IProps = {
+  animationErrorDuration?: number
   buttonDeleteComponent: any
   buttonDeleteText?: string
   buttonNumberComponent: any
@@ -119,6 +120,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
         }>
         {this.state.status === PinStatus.choose && (
           <PinCode
+            animationErrorDuration={this.props.animationErrorDuration}
             buttonDeleteComponent={this.props.buttonDeleteComponent || null}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent || null}
@@ -184,6 +186,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
         )}
         {this.state.status === PinStatus.confirm && (
           <PinCode
+            animationErrorDuration={this.props.animationErrorDuration}
             buttonDeleteComponent={this.props.buttonDeleteComponent || null}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent || null}

@@ -5,6 +5,7 @@ import { StyleProp, TextStyle, ViewStyle } from "react-native";
  * Pin Code Component
  */
 export declare type IProps = {
+    animationErrorDuration?: number;
     buttonDeleteComponent?: any;
     buttonDeleteText?: string;
     buttonNumberComponent?: any;
