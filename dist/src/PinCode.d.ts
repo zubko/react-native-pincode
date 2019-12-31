@@ -9,6 +9,7 @@ export declare type IProps = {
     buttonDeleteComponent?: any;
     buttonDeleteText?: string;
     buttonNumberComponent?: any;
+    bottomComponent?: any;
     cancelFunction?: () => void;
     colorCircleButtons?: string;
     colorPassword?: string;
@@ -18,6 +19,7 @@ export declare type IProps = {
     emptyColumnComponent: any;
     endProcess: (pinCode: string, isErrorValidation?: boolean) => void;
     getCurrentLength?: (length: number) => void;
+    headerComponent?: any;
     iconButtonDeleteDisabled?: boolean;
     numbersButtonOverlayColor?: string;
     passwordComponent?: any;

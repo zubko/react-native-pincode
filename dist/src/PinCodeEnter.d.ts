@@ -11,6 +11,7 @@ export declare type IProps = {
     buttonDeleteComponent: any;
     buttonDeleteText?: string;
     buttonNumberComponent: any;
+    bottomComponent?: any;
     callbackErrorTouchId?: (e: Error) => void;
     changeInternalStatus: (status: PinResultStatus) => void;
     colorCircleButtons?: string;
@@ -24,6 +25,7 @@ export declare type IProps = {
     finishProcess?: (pinCode: string) => void;
     getCurrentLength?: (length: number) => void;
     handleResult: any;
+    headerComponent?: any;
     iconButtonDeleteDisabled?: boolean;
     maxAttempts: number;
     numbersButtonOverlayColor?: string;

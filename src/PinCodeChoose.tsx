@@ -13,6 +13,7 @@ export type IProps = {
   buttonDeleteComponent: any
   buttonDeleteText?: string
   buttonNumberComponent: any
+  bottomComponent?: any
   colorCircleButtons?: string
   colorPassword?: string
   colorPasswordEmpty?: string
@@ -21,6 +22,7 @@ export type IProps = {
   emptyColumnComponent: any
   finishProcess?: (pinCode: string) => void
   getCurrentLength?: (length: number) => void
+  headerComponent?: any
   iconButtonDeleteDisabled?: boolean
   numbersButtonOverlayColor?: string
   passwordComponent: any
@@ -124,6 +126,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             buttonDeleteComponent={this.props.buttonDeleteComponent || null}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent || null}
+            bottomComponent={this.props.bottomComponent}
             colorCircleButtons={this.props.colorCircleButtons}
             colorPassword={this.props.colorPassword || undefined}
             colorPasswordEmpty={this.props.colorPasswordEmpty}
@@ -132,6 +135,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             emptyColumnComponent={this.props.emptyColumnComponent}
             endProcess={this.endProcessCreation}
             getCurrentLength={this.props.getCurrentLength}
+            headerComponent={this.props.headerComponent}
             iconButtonDeleteDisabled={this.props.iconButtonDeleteDisabled}
             numbersButtonOverlayColor={
               this.props.numbersButtonOverlayColor || undefined
@@ -190,6 +194,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             buttonDeleteComponent={this.props.buttonDeleteComponent || null}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent || null}
+            bottomComponent={this.props.bottomComponent}
             cancelFunction={this.cancelConfirm}
             colorCircleButtons={this.props.colorCircleButtons}
             colorPassword={this.props.colorPassword || undefined}
@@ -199,6 +204,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             emptyColumnComponent={this.props.emptyColumnComponent}
             endProcess={this.endProcessConfirm}
             getCurrentLength={this.props.getCurrentLength}
+            headerComponent={this.props.headerComponent}
             iconButtonDeleteDisabled={this.props.iconButtonDeleteDisabled}
             numbersButtonOverlayColor={
               this.props.numbersButtonOverlayColor || undefined

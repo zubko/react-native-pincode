@@ -379,6 +379,7 @@ class PinCode extends React.PureComponent {
                         : styles.viewTitle,
                     { opacity: opacity }
                 ] },
+                this.props.headerComponent && this.props.headerComponent(),
                 this.props.titleComponent
                     ? this.props.titleComponent()
                     : this.renderTitle(colorTitle, opacityTitle, attemptFailed, showError),
@@ -449,7 +450,10 @@ class PinCode extends React.PureComponent {
                                         this.props.getCurrentLength(newPass.length);
                                 }
                             })
-                            : this.renderButtonDelete(opacity)))))));
+                            : this.renderButtonDelete(opacity)))),
+                this.props.bottomComponent &&
+                    React.createElement(react_native_easy_grid_1.Row, null,
+                        React.createElement(react_native_easy_grid_1.Col, null, this.props.bottomComponent())))));
     }
 }
 exports.default = PinCode;

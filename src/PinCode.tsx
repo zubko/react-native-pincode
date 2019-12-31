@@ -29,6 +29,7 @@ export type IProps = {
   buttonDeleteComponent?: any
   buttonDeleteText?: string
   buttonNumberComponent?: any
+  bottomComponent?: any
   cancelFunction?: () => void
   colorCircleButtons?: string
   colorPassword?: string
@@ -38,6 +39,7 @@ export type IProps = {
   emptyColumnComponent: any
   endProcess: (pinCode: string, isErrorValidation?: boolean) => void
   getCurrentLength?: (length: number) => void
+  headerComponent?: any
   iconButtonDeleteDisabled?: boolean
   numbersButtonOverlayColor?: string
   passwordComponent?: any
@@ -621,6 +623,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
                   : styles.viewTitle,
                 { opacity: opacity }
               ]}>
+              {this.props.headerComponent && this.props.headerComponent()}
               {this.props.titleComponent
                 ? this.props.titleComponent()
                 : this.renderTitle(
@@ -783,7 +786,15 @@ class PinCode extends React.PureComponent<IProps, IState> {
               </Animate>
             </Col>
           </Row>
+          {this.props.bottomComponent && 
+            <Row>
+              <Col>
+                {this.props.bottomComponent()}
+              </Col>
+            </Row>
+          }
         </Grid>
+        
       </View>
     );
   }
