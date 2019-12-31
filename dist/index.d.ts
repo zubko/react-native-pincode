@@ -9,6 +9,7 @@ export declare type IProps = {
     buttonDeleteComponent?: any;
     buttonDeleteText?: string;
     buttonNumberComponent?: any;
+    bottomComponent?: any;
     callbackErrorTouchId?: (error: Error) => void;
     colorCircleButtons?: string;
     colorPassword?: string;
@@ -20,6 +21,7 @@ export declare type IProps = {
     finishProcess?: (pinCode?: string) => void;
     getCurrentPinLength?: (length: number) => void;
     handleResultEnterPin?: any;
+    headerComponent?: any;
     iconComponentLockedPage?: any;
     iconButtonDeleteDisabled?: boolean;
     lockedIconComponent?: any;

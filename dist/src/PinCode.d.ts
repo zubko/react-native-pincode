@@ -9,6 +9,7 @@ export interface IProps {
     buttonDeleteComponent?: any;
     buttonDeleteText?: string;
     buttonNumberComponent?: any;
+    bottomComponent?: any;
     cancelFunction?: () => void;
     colorCircleButtons?: string;
     colorPassword: string;
@@ -19,6 +20,7 @@ export interface IProps {
     endProcess: (pinCode: string, isErrorValidation?: boolean) => void;
     launchTouchID?: () => void;
     getCurrentLength?: (length: number) => void;
+    headerComponent?: any;
     iconButtonDeleteDisabled?: boolean;
     numbersButtonOverlayColor: string;
     passwordComponent?: any;

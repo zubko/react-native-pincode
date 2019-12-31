@@ -201,6 +201,8 @@ class PINCode extends React.PureComponent<IProps, IState> {
             bottomComponent={this.props.bottomComponent}
             headerComponent={this.props.headerComponent}
             alphabetCharsVisible={this.props.alphabetCharsVisible}
+            bottomComponent={this.props.bottomComponent}
+            headerComponent={this.props.headerComponent}
             animationErrorDuration={this.props.animationErrorDuration}
             buttonDeleteComponent={this.props.buttonDeleteComponent}
             buttonDeleteText={this.props.buttonDeleteText}
@@ -270,6 +272,8 @@ class PINCode extends React.PureComponent<IProps, IState> {
             headerComponent={this.props.headerComponent}
             alphabetCharsVisible={this.props.alphabetCharsVisible}
             passcodeFallback={this.props.passcodeFallback}
+            bottomComponent={this.props.bottomComponent}
+            headerComponent={this.props.headerComponent}
             animationErrorDuration={this.props.animationErrorDuration}
             buttonDeleteComponent={this.props.buttonDeleteComponent}
             buttonDeleteText={this.props.buttonDeleteText}

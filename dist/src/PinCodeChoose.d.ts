@@ -10,6 +10,7 @@ export interface IProps {
     buttonDeleteComponent: any;
     buttonDeleteText?: string;
     buttonNumberComponent: any;
+    bottomComponent?: any;
     colorCircleButtons?: string;
     colorPassword?: string;
     colorPasswordEmpty?: string;
@@ -18,6 +19,7 @@ export interface IProps {
     emptyColumnComponent: any;
     finishProcess?: (pinCode: string) => void;
     getCurrentLength?: (length: number) => void;
+    headerComponent?: any;
     iconButtonDeleteDisabled?: boolean;
     numbersButtonOverlayColor?: string;
     passwordComponent: any;
