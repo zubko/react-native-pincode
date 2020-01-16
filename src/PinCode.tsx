@@ -35,7 +35,7 @@ export interface IProps {
   colorPassword: string
   colorPasswordEmpty?: string
   colorPasswordError: string
-  customBackSpaceIcon?: any
+  customBackSpaceIcon?: Function
   emptyColumnComponent: any
   endProcess: (pinCode: string, isErrorValidation?: boolean) => void
   getCurrentLength?: (length: number) => void
@@ -448,7 +448,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
   renderButtonDelete = (opacity: number) => {
     return (
       <TouchableHighlight
-        activeOpacity={this.props.customBackSpaceIcon ? .5 : 1}
+        activeOpacity={1}
         disabled={this.state.password.length === 0}
         underlayColor="transparent"
         onHideUnderlay={() =>
@@ -475,7 +475,9 @@ class PinCode extends React.PureComponent<IProps, IState> {
                   : textDeleteButtonDefault}>
         <View
           style={[styles.colIcon, this.props.styleColumnDeleteButton]}>
-          {this.props.customBackSpaceIcon ||
+          {this.props.customBackSpaceIcon ?
+            this.props.customBackSpaceIcon({colorDelete: this.state.colorDelete, opacity })
+            :
             <View>
               {!this.props.iconButtonDeleteDisabled && (
                 <Icon
