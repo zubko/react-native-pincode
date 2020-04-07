@@ -69,6 +69,7 @@ export interface IProps {
   titleConfirmFailed?: string
   titleValidationFailed?: string
   validationRegex?: RegExp
+  vibrationEnabled?: boolean
 }
 
 export type IState = {
@@ -188,6 +189,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
               this.props.titleValidationFailed || 'PIN code unsafe'
             }
             validationRegex={this.props.validationRegex}
+            vibrationEnabled={this.props.vibrationEnabled}
           />
         )}
         {this.state.status === PinStatus.confirm && (
@@ -260,6 +262,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             styleTextSubtitle={this.props.styleTextSubtitle}
             styleTextTitle={this.props.styleTextTitle}
             styleViewTitle={this.props.styleViewTitle}
+            vibrationEnabled={this.props.vibrationEnabled}
           />
         )}
       </View>
