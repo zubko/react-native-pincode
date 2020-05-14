@@ -85,6 +85,7 @@ export interface IProps {
   titleValidationFailed?: string
   validationRegex?: RegExp
   vibrationEnabled?: boolean
+  delayBetweenAttempts?: number;
 }
 
 export interface IState {
@@ -135,6 +136,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
     textPasswordVisibleFamily: "system font",
     textPasswordVisibleSize: 22,
     vibrationEnabled: true,
+    delayBetweenAttempts: 3000,
   }
 
   private readonly _circleSizeEmpty: number;
@@ -183,7 +185,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
       changeScreen: false
     });
     this.doShake();
-    await delay(this.props.animationErrorDuration || 3000);
+    await delay(this.props.delayBetweenAttempts || 3000);
     this.newAttempt();
   };
 
@@ -272,8 +274,8 @@ class PinCode extends React.PureComponent<IProps, IState> {
                 {
                   opacity: opacity,
                   color: this.state.textButtonSelected === text
-                      ? this.props.styleColorButtonTitleSelected
-                      : this.props.styleColorButtonTitle
+                    ? this.props.styleColorButtonTitleSelected
+                    : this.props.styleColorButtonTitle
                 }
               ]}>
               {text}
@@ -374,8 +376,8 @@ class PinCode extends React.PureComponent<IProps, IState> {
                   showError
                     ? colorPwdErr
                     : (lengthSup && password.length > 0)
-                    ? colorPwd
-                    : colorPwdEmp
+                      ? colorPwd
+                      : colorPwdEmp
                 ],
                 borderRadius: [
                   lengthSup
@@ -396,50 +398,50 @@ class PinCode extends React.PureComponent<IProps, IState> {
                 timing: { duration: 200, ease: easeLinear }
               }}>
               {({
-                  opacity,
-                  x,
-                  height,
-                  width,
-                  color,
-                  borderRadius,
-                  marginRight,
-                  marginLeft
-                }: any) => (
-                <View style={styles.viewCircles}>
-                  {((!this.props.pinCodeVisible ||
-                    (this.props.pinCodeVisible && !lengthSup)) && (
-                    <View
-                      style={[{
-                        left: x,
-                        height: height,
-                        width: width,
-                        opacity: opacity,
-                        borderRadius: borderRadius,
-                        marginLeft: marginLeft,
-                        marginRight: marginRight,
-                        backgroundColor: color
-                      }, this.props.stylePinCodeCircle]}
-                    />
-                  )) || (
-                    <View
-                      style={{
-                        left: x,
-                        opacity: opacity,
-                        marginLeft: marginLeft,
-                        marginRight: marginRight
-                      }}>
-                      <Text
-                        style={{
-                          color: color,
-                          fontFamily: this.props.textPasswordVisibleFamily,
-                          fontSize: this.props.textPasswordVisibleSize
-                        }}>
-                        {this.state.password[val]}
-                      </Text>
-                    </View>
-                  )}
-                </View>
-              )}
+                opacity,
+                x,
+                height,
+                width,
+                color,
+                borderRadius,
+                marginRight,
+                marginLeft
+              }: any) => (
+                  <View style={styles.viewCircles}>
+                    {((!this.props.pinCodeVisible ||
+                      (this.props.pinCodeVisible && !lengthSup)) && (
+                        <View
+                          style={[{
+                            left: x,
+                            height: height,
+                            width: width,
+                            opacity: opacity,
+                            borderRadius: borderRadius,
+                            marginLeft: marginLeft,
+                            marginRight: marginRight,
+                            backgroundColor: color
+                          }, this.props.stylePinCodeCircle]}
+                        />
+                      )) || (
+                        <View
+                          style={{
+                            left: x,
+                            opacity: opacity,
+                            marginLeft: marginLeft,
+                            marginRight: marginRight
+                          }}>
+                          <Text
+                            style={{
+                              color: color,
+                              fontFamily: this.props.textPasswordVisibleFamily,
+                              fontSize: this.props.textPasswordVisibleSize
+                            }}>
+                            {this.state.password[val]}
+                          </Text>
+                        </View>
+                      )}
+                  </View>
+                )}
             </Animate>
           );
         })}
@@ -476,7 +478,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
         <View
           style={[styles.colIcon, this.props.styleColumnDeleteButton]}>
           {this.props.customBackSpaceIcon ?
-            this.props.customBackSpaceIcon({colorDelete: this.state.colorDelete, opacity })
+            this.props.customBackSpaceIcon({ colorDelete: this.state.colorDelete, opacity })
             :
             <>
               {!this.props.iconButtonDeleteDisabled && (
@@ -516,9 +518,9 @@ class PinCode extends React.PureComponent<IProps, IState> {
           { color: colorTitle, opacity: opacityTitle }
         ]}>
         {(attemptFailed && this.props.titleAttemptFailed) ||
-        (showError && this.props.titleConfirmFailed) ||
-        (showError && this.props.titleValidationFailed) ||
-        this.props.sentenceTitle}
+          (showError && this.props.titleConfirmFailed) ||
+          (showError && this.props.titleValidationFailed) ||
+          this.props.sentenceTitle}
       </Text>
     );
   };
@@ -725,7 +727,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
                 update={{
                   opacity: [
                     password.length === 0 ||
-                    password.length === this.props.passwordLength
+                      password.length === this.props.passwordLength
                       ? 0.5
                       : 1
                   ],
