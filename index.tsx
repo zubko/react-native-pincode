@@ -255,7 +255,7 @@ class PINCode extends React.PureComponent<IProps, IState> {
             titleValidationFailed={this.props.titleValidationFailed}
             validationRegex={this.props.validationRegex}
             vibrationEnabled={this.props.vibrationEnabled}
-            delayBetweenAttempts={this.props.delayBetweenAttempts || 3000}
+            delayBetweenAttempts={this.props.delayBetweenAttempts}
           />}
         {status === PinStatus.enter &&
           <PinCodeEnter
@@ -332,7 +332,7 @@ class PINCode extends React.PureComponent<IProps, IState> {
             touchIDSentence={this.props.touchIDSentence || "To unlock your application"}
             touchIDTitle={this.props.touchIDTitle || touchIDTitleDefault}
             vibrationEnabled={this.props.vibrationEnabled}
-            delayBetweenAttempts={this.props.delayBetweenAttempts || 3000}
+            delayBetweenAttempts={this.props.delayBetweenAttempts}
           />}
         {(pinStatus === PinResultStatus.locked ||
           this.state.internalPinStatus === PinResultStatus.locked ||
