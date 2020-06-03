@@ -38,6 +38,7 @@ export interface IProps {
   customBackSpaceIcon?: Function
   emptyColumnComponent: any
   endProcess: (pinCode: string, isErrorValidation?: boolean) => void
+  launchTouchID?: () => void 
   getCurrentLength?: (length: number) => void
   headerComponent?: any
   iconButtonDeleteDisabled?: boolean
@@ -700,7 +701,10 @@ class PinCode extends React.PureComponent<IProps, IState> {
                 styles.colEmpty,
                 this.props.styleEmptyColumn
               ]}>
-              {this.props.emptyColumnComponent || null}
+              {this.props.emptyColumnComponent 
+                ? this.props.emptyColumnComponent(this.props.launchTouchID)
+                : null
+              }
             </Col>
             <Col
               style={[

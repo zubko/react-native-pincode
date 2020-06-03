@@ -255,6 +255,7 @@ class PinCodeEnter extends React.PureComponent<IProps, IState> {
           customBackSpaceIcon={this.props.customBackSpaceIcon}
           emptyColumnComponent={this.props.emptyColumnComponent}
           endProcess={this.endProcess}
+          launchTouchID={this.launchTouchID}
           getCurrentLength={this.props.getCurrentLength}
           headerComponent={this.props.headerComponent}
           iconButtonDeleteDisabled={this.props.iconButtonDeleteDisabled}
