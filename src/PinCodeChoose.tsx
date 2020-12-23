@@ -11,6 +11,7 @@ import * as Keychain from 'react-native-keychain'
 
 export interface IProps {
   animationErrorDuration?: number
+  alphabetCharsVisible?: boolean
   buttonDeleteComponent: any
   buttonDeleteText?: string
   buttonNumberComponent: any
@@ -31,6 +32,7 @@ export interface IProps {
   pinCodeKeychainName: string
   pinCodeVisible?: boolean
   storePin: any
+  styleAlphabet?: StyleProp<TextStyle>
   styleButtonCircle?: StyleProp<ViewStyle>
   styleCircleHiddenPassword?: StyleProp<ViewStyle>
   styleCircleSizeEmpty?: number
@@ -129,6 +131,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
         {this.state.status === PinStatus.choose && (
           <PinCode
             animationErrorDuration={this.props.animationErrorDuration}
+            alphabetCharsVisible={this.props.alphabetCharsVisible}
             buttonDeleteComponent={this.props.buttonDeleteComponent || null}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent || null}
@@ -151,6 +154,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             pinCodeVisible={this.props.pinCodeVisible}
             sentenceTitle={this.props.titleChoose}
             status={PinStatus.choose}
+            styleAlphabet={this.props.styleAlphabet}
             styleButtonCircle={this.props.styleButtonCircle}
             styleCircleHiddenPassword={this.props.styleCircleHiddenPassword}
             styleCircleSizeEmpty={this.props.styleCircleSizeEmpty}
@@ -198,6 +202,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
         {this.state.status === PinStatus.confirm && (
           <PinCode
             animationErrorDuration={this.props.animationErrorDuration}
+            alphabetCharsVisible={this.props.alphabetCharsVisible}
             buttonDeleteComponent={this.props.buttonDeleteComponent || null}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent || null}
@@ -234,6 +239,7 @@ class PinCodeChoose extends React.PureComponent<IProps, IState> {
             titleConfirmFailed={
               this.props.titleConfirmFailed || 'Your entries did not match'
             }
+            styleAlphabet={this.props.styleAlphabet}
             styleButtonCircle={this.props.styleButtonCircle}
             styleCircleHiddenPassword={this.props.styleCircleHiddenPassword}
             styleCircleSizeEmpty={this.props.styleCircleSizeEmpty}

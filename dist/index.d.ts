@@ -1,14 +1,14 @@
+/// <reference types="react" />
 import { PinResultStatus } from "./src/utils";
 import * as React from "react";
 import { StyleProp, ViewStyle, TextStyle } from "react-native";
 export declare type IProps = {
-    animationErrorDuration?: number;
+    alphabetCharsVisible?: boolean;
     bottomLeftComponent?: any;
     buttonComponentLockedPage?: any;
     buttonDeleteComponent?: any;
     buttonDeleteText?: string;
     buttonNumberComponent?: any;
-    bottomComponent?: any;
     callbackErrorTouchId?: (error: Error) => void;
     colorCircleButtons?: string;
     colorPassword?: string;
@@ -20,7 +20,6 @@ export declare type IProps = {
     finishProcess?: (pinCode?: string) => void;
     getCurrentPinLength?: (length: number) => void;
     handleResultEnterPin?: any;
-    headerComponent?: any;
     iconComponentLockedPage?: any;
     iconButtonDeleteDisabled?: boolean;
     lockedIconComponent?: any;
@@ -38,6 +37,7 @@ export declare type IProps = {
     status: "choose" | "enter" | "locked";
     storedPin?: string;
     storePin?: any;
+    styleAlphabet?: StyleProp<TextStyle>;
     styleMainContainer?: StyleProp<ViewStyle>;
     stylePinCodeChooseContainer?: StyleProp<ViewStyle>;
     stylePinCodeEnterContainer?: StyleProp<ViewStyle>;
@@ -118,10 +118,10 @@ declare class PINCode extends React.PureComponent<IProps, IState> {
     static defaultProps: Partial<IProps>;
     constructor(props: IProps);
     changeInternalStatus: (status: PinResultStatus) => void;
-    renderLockedPage: () => any;
-    render(): any;
+    renderLockedPage: () => JSX.Element;
+    render(): JSX.Element;
 }
-export declare function hasUserSetPinCode(serviceName?: string): Promise<any>;
-export declare function deleteUserPinCode(serviceName?: string): Promise<any>;
-export declare function resetPinCodeInternalStates(pinAttempsStorageName?: string, timePinLockedStorageName?: string): Promise<any>;
+export declare function hasUserSetPinCode(serviceName?: string): Promise<boolean>;
+export declare function deleteUserPinCode(serviceName?: string): Promise<void>;
+export declare function resetPinCodeInternalStates(pinAttempsStorageName?: string, timePinLockedStorageName?: string): Promise<void>;
 export default PINCode;
