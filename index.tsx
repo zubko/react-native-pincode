@@ -11,7 +11,6 @@ import { View, StyleSheet, StyleProp, ViewStyle, TextStyle } from "react-native"
 export type IProps = {
   animationErrorDuration?: number
   alphabetCharsVisible?: boolean
-  animationErrorDuration?: number
   bottomLeftComponent?: any
   buttonComponentLockedPage?: any
   buttonDeleteComponent?: any
@@ -197,13 +196,10 @@ class PINCode extends React.PureComponent<IProps, IState> {
       <View style={[styles.container, styleMainContainer]}>
         {status === PinStatus.choose &&
           <PinCodeChoose
-			animationErrorDuration={this.props.animationErrorDuration}
+			      animationErrorDuration={this.props.animationErrorDuration}
             bottomComponent={this.props.bottomComponent}
             headerComponent={this.props.headerComponent}
             alphabetCharsVisible={this.props.alphabetCharsVisible}
-            bottomComponent={this.props.bottomComponent}
-            headerComponent={this.props.headerComponent}
-            animationErrorDuration={this.props.animationErrorDuration}
             buttonDeleteComponent={this.props.buttonDeleteComponent}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent}
@@ -267,14 +263,11 @@ class PINCode extends React.PureComponent<IProps, IState> {
           />}
         {status === PinStatus.enter &&
           <PinCodeEnter
-			animationErrorDuration={this.props.animationErrorDuration}
+			      animationErrorDuration={this.props.animationErrorDuration}
             bottomComponent={this.props.bottomComponent}
             headerComponent={this.props.headerComponent}
             alphabetCharsVisible={this.props.alphabetCharsVisible}
             passcodeFallback={this.props.passcodeFallback}
-            bottomComponent={this.props.bottomComponent}
-            headerComponent={this.props.headerComponent}
-            animationErrorDuration={this.props.animationErrorDuration}
             buttonDeleteComponent={this.props.buttonDeleteComponent}
             buttonDeleteText={this.props.buttonDeleteText}
             buttonNumberComponent={this.props.buttonNumberComponent}

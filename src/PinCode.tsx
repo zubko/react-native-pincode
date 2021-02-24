@@ -27,7 +27,6 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 export interface IProps {
   animationErrorDuration?: number
   alphabetCharsVisible?: boolean
-  animationErrorDuration?: number
   buttonDeleteComponent?: any
   buttonDeleteText?: string
   buttonNumberComponent?: any
@@ -40,7 +39,7 @@ export interface IProps {
   customBackSpaceIcon?: Function
   emptyColumnComponent: any
   endProcess: (pinCode: string, isErrorValidation?: boolean) => void
-  launchTouchID?: () => void 
+  launchTouchID?: () => void
   getCurrentLength?: (length: number) => void
   headerComponent?: any
   iconButtonDeleteDisabled?: boolean
@@ -251,7 +250,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
       ["8", "TUV"],
       ["9", "WXYZ"],
       ["0", " "]
-  ]); 
+  ]);
     const disabled =
       (this.state.password.length === this.props.passwordLength ||
         this.state.showError) &&
@@ -734,7 +733,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
                 styles.colEmpty,
                 this.props.styleEmptyColumn
               ]}>
-              {this.props.emptyColumnComponent 
+              {this.props.emptyColumnComponent
                 ? this.props.emptyColumnComponent(this.props.launchTouchID)
                 : null
               }
@@ -785,7 +784,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
               </Animate>
             </Col>
           </Row>
-          {this.props.bottomComponent && 
+          {this.props.bottomComponent &&
             <Row>
               <Col>
                 {this.props.bottomComponent()}
@@ -793,7 +792,7 @@ class PinCode extends React.PureComponent<IProps, IState> {
             </Row>
           }
         </Grid>
-        
+
       </View>
     );
   }

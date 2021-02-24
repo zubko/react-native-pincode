@@ -6,8 +6,8 @@ import { StyleProp, TextStyle, ViewStyle } from 'react-native';
  * Pin Code Enter PIN Page
  */
 export interface IProps {
-    alphabetCharsVisible?: boolean;
     animationErrorDuration?: number;
+    alphabetCharsVisible?: boolean;
     buttonDeleteComponent: any;
     buttonDeleteText?: string;
     buttonNumberComponent: any;

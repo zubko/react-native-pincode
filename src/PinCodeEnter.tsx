@@ -21,7 +21,6 @@ import TouchID from 'react-native-touch-id'
 export interface IProps {
   animationErrorDuration?: number
   alphabetCharsVisible?: boolean
-  animationErrorDuration?: number
   buttonDeleteComponent: any
   buttonDeleteText?: string
   buttonNumberComponent: any
@@ -249,7 +248,6 @@ class PinCodeEnter extends React.PureComponent<IProps, IState> {
         <PinCode
           animationErrorDuration={this.props.animationErrorDuration}
           alphabetCharsVisible={this.props.alphabetCharsVisible}
-          animationErrorDuration={this.props.animationErrorDuration}
           buttonDeleteComponent={this.props.buttonDeleteComponent || null}
           buttonDeleteText={this.props.buttonDeleteText}
           buttonNumberComponent={this.props.buttonNumberComponent || null}
