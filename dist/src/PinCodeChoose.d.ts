@@ -1,4 +1,3 @@
-/// <reference types="react" />
 import { PinStatus } from './PinCode';
 import * as React from 'react';
 import { StyleProp, TextStyle, ViewStyle } from 'react-native';
@@ -7,6 +6,7 @@ import { StyleProp, TextStyle, ViewStyle } from 'react-native';
  */
 export interface IProps {
     alphabetCharsVisible?: boolean;
+    animationErrorDuration?: number;
     buttonDeleteComponent: any;
     buttonDeleteText?: string;
     buttonNumberComponent: any;
